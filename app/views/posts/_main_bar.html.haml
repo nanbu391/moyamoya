@@ -1,0 +1,40 @@
+.main-bar
+  .main-bar__main-header
+    .main-bar__main-header__left-box
+      モヤモヤ
+    .main-bar__main-header__right-box
+      .main-bar__main-header__right-box__score
+        点数
+      .main-bar__main-header__right-box__menu-btn
+        menu
+      .main-bar__main-header__right-box__search-btn
+        = link_to # 
+        検索
+
+  .main-bar__form
+    .main-bar__form__new-message
+      .main-bar__form__new-message__input-box
+        .main-bar__form__new-message__input-box__text
+        %input{type: "text" , class: "input-box__text", placeholder: "type a message"}
+      .main-bar__form__new-message__submit-btn
+        %input{type: 'submit', class:"submit-btn",value: "Send"}
+
+  .main-bar__messages
+    .main-bar__messages__upper-message
+      .main-bar__messages__upper-message__user-name
+        message.user.name
+      .main-bar__messages__upper-message__date
+        message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    .main-bar__messages__lower-message
+      message.content
+      image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+ 
+
+  
+
+
+
+
+
+  
